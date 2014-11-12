@@ -32,7 +32,7 @@ func patternLoop(max int) int {
 	total := 0
 
 	// I compared the results of multiples and noticed this incremental pattern
-	pattern := []int{3, 2, 1, 3, 1, 2, 3, 3, 2, 1, 3, 1, 2, 3}
+	pattern := []int{3, 2, 1, 3, 1, 2, 3}
 
 	for i := 0; i < max; {
 		for _, v := range pattern {
