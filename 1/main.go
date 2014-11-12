@@ -1,9 +1,17 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 )
 
+var max int
+
+func init() {
+	flag.IntVar(&max, "max", 1000, "max value for multiples")
+}
+
+// Loop through each number from 1 to max.
 func oneLoop(max int) int {
 	total := 0
 	values := []int{5, 3}
@@ -19,6 +27,7 @@ func oneLoop(max int) int {
 	return total
 }
 
+// Loop automatically skips non-multiples using a sequence.
 func patternLoop(max int) int {
 	total := 0
 
@@ -40,9 +49,8 @@ func patternLoop(max int) int {
 
 // https://projecteuler.net/problem=1
 func main() {
-	fmt.Printf("If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.  \nFind the sum of all the multiples of 3 or 5 below 1000.\n")
-
-	max := 1000
+	flag.Parse()
+	fmt.Printf("If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.  \nFind the sum of all the multiples of 3 or 5 below %v.\n\n", max)
 
 	//total := oneLoop(max)
 	//fmt.Printf("Total of multiples of 3 or 5 below %v: %v\n", max, total)
