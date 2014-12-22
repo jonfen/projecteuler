@@ -12,7 +12,6 @@ var testSet = []struct {
 	{3, 906609},
 }
 
-/*
 func TestPal(t *testing.T) {
 	for _, tt := range testSet {
 		num, _ := numeral(tt.digits)
@@ -21,7 +20,7 @@ func TestPal(t *testing.T) {
 		}
 	}
 }
-*/
+
 func TestIsPalindrome(t *testing.T) {
 	var samples = []struct {
 		num    int
