@@ -22,28 +22,23 @@ func numeral(digits int) (int, error) {
 	return strconv.Atoi(numeral)
 }
 
-func checkRange(numeral int) int {
-	digits := len(strconv.Itoa(numeral))
-
+func checkRange(numeral int) (int, error) {
 	var str string
-	for i := 1; i <= digits-1; i++ {
+	for i := 1; i <= len(strconv.Itoa(numeral))-1; i++ {
 		str += "9"
 	}
 
-	retval, _ := strconv.Atoi(str)
-
-	return retval
+	return strconv.Atoi(str)
 }
 
 func palindrome(numeral int) int {
-	offset := checkRange(numeral)
+	offset, _ := checkRange(numeral)
 
 	for left := numeral; left > numeral-offset; left-- {
 		for right := numeral; right > numeral-offset; right-- {
 			if isPalindrome(left * right) {
 				return left * right
 			}
-
 		}
 	}
 
