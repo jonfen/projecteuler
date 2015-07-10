@@ -8,10 +8,9 @@ var testSet = []struct {
 	max     int
 	sum     int
 	squares int
-	result  int
 }{
-	{10, 385, 3025, 2640},
-	{100, 338350, 25502500, 25164150},
+	{10, 385, 3025},
+	{100, 338350, 25502500},
 }
 
 func TestSumOfSquares(t *testing.T) {
